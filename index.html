@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Card Game | Khayaltech</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="result">
+      <div class="img">
+        <img src="Images/butov.png" alt="Look" width="70" heigh="70" />
+        <span class="material-icons">menu</span>
+      </div>
+      <div class="menu">
+        <!-- <div class="icon">
+          <span class="material-icons">theater_comedy</span>
+        </div> -->
+        <div class="menu-items">
+          <ul class="menu-list">
+            <li class="list-in start">
+              <span class="material-icons"> sports_score </span>
+              <p>Play</p>
+            </li>
+
+            <li class="list-in restart">
+              <span class="material-icons"> replay_circle_filled </span>
+              <p>Restart</p>
+            </li>
+            <li class="list-in record">
+              <span class="material-icons"> emoji_events </span>
+              <p>Records</p>
+            </li>
+            <li class="list-in exit">
+              <span class="material-icons"> highlight_off </span>
+              <p>Exit</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="high-score">
+        <span class="material-icons" id="cancel"> cancel </span>
+        <p class="hscore"></p>
+      </div>
+    </div>
+
+    <div id="timer">
+      <span class="material-icons"> timer </span>
+
+      <div>
+        <span id="hour">00</span>:<span id="minute">00</span>:<span id="second"
+          >00</span
+        >:<span id="millisecond">000</span>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="play">
+        <img src="Images/playbg.jpg" alt="Play" width="580" height="580" />
+      </div>
+      <div class="congratulations">
+        <span class="material-icons"> celebration </span>
+        <p>Congratulations !</p>
+      </div>
+
+      <div class="cardDiv">
+        <ul class="cards">
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img1.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img2.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img3.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img4.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img7.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img8.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img5.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img9.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img1.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img2.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img3.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img4.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img5.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img9.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img7.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+          <li class="card">
+            <div class="view front-view">
+              <span class="material-icons">theater_comedy</span>
+            </div>
+            <div class="view back-view">
+              <img
+                src="Images/card-img8.jpg"
+                alt="card-img"
+                width="120"
+                height="120"
+              />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <div class="input">
+        <img src="Images/shortview.png" alt="looks" />
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,343 @@
+@import url("<link href='https://fonts.googleapis.com/css2?family=Poppins&display=swap' rel='stylesheet'>");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(115deg, rgb(252, 4, 4), rgb(71, 1, 1));
+  /* pointer-events: none; */
+  position: relative;
+}
+.cards,
+.card,
+.view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cards .card .view {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  border-radius: 7px;
+  transition: transform 0.25s linear;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+}
+.cardDiv {
+  width: 580px;
+  height: 580px;
+  opacity: 0;
+  transition: all 0.3s linear;
+  pointer-events: none;
+}
+
+/* .play {
+  opacity: 0;
+  width: 580px;
+  height: 580px;
+}
+.play img {
+  border-radius: 10px;
+} */
+.congratulations {
+  opacity: 0;
+  width: 580px;
+  height: 580px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgb(5, 112, 49);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 40%;
+  background-color: black;
+  transition: all 0.3s linear;
+}
+.congratulations p {
+  font-family: "Press Start 2P", cursive;
+  color: rgb(5, 112, 49);
+  font-size: 20px;
+}
+.play {
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+.play img {
+  border-radius: 10px;
+  opacity: 1;
+}
+.list-in:hover p,
+.list-in:hover span {
+  color: rgba(66, 66, 66, 0.555);
+}
+.congratulations span {
+  color: rgb(5, 112, 49);
+  font-size: 80px;
+  padding-bottom: 20px;
+}
+.congratulations .score p,
+.congratulations .score span {
+  font-size: 30px;
+  color: green;
+  font-family: "Orbitron", sans-serif;
+}
+.congratulations .score {
+  top: 10px;
+  position: absolute;
+}
+.wrapper {
+  /* max-height: 100%; */
+  height: 600px;
+
+  width: 600px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 50px;
+  box-shadow: 0 3px 10px rgba(73, 3, 3, 0.9);
+  /* pointer-events: none; */
+  cursor: pointer;
+  position: relative;
+}
+
+.cards {
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cards .card {
+  cursor: pointer;
+  position: relative;
+  perspective: 800px;
+  transform-style: preserve-3d;
+  height: calc(100% / 6-10px);
+  width: calc(100% / 6-10px);
+}
+.card .front-view span {
+  font-size: 40px;
+  color: #bb0909;
+  stroke: black;
+  stroke-width: 6px;
+}
+
+.card .back-view {
+  transform: rotateY(-180deg);
+}
+
+.cards .card {
+  height: calc(100% / 4 - 10px);
+  width: calc(100% / 4 - 10px);
+  cursor: pointer;
+}
+.card.shake {
+  animation: shake 0.35s ease-in-out;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(-13px);
+  }
+  20% {
+    transform: translateX(13px);
+  }
+  40% {
+    transform: translateX(13px);
+  }
+  60% {
+    transform: translateX(-8px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+}
+
+.card.flip .back-view {
+  transform: rotateY(0);
+}
+.card.flip .front-view {
+  transform: rotateY(180deg);
+}
+.result {
+  min-height: 100vh;
+  position: relative;
+  transition: all 0.5s ease;
+}
+.menu {
+  min-height: 70vh;
+  opacity: 0;
+  width: 300px;
+  background-color: rgba(146, 4, 4, 0.555);
+  position: absolute;
+  top: 20vh;
+  left: 10vh;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(73, 3, 3, 0.9);
+  border: 3px solid rgba(223, 220, 220, 0.8);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.menu span {
+  font-size: 70px;
+  color: white;
+  width: 100%;
+  /* min-height: 10vh; */
+  padding: 20px 0 0 0;
+}
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 5px solid #ffff00; */
+  padding: 10px;
+}
+.list-in {
+  display: flex;
+}
+.list-in span {
+  padding-left: 5px;
+  display: flex;
+  margin: 0;
+  border: none;
+  width: 45px;
+  height: 60px;
+  padding-right: 20px;
+
+  text-align: right;
+  font-size: 40px;
+}
+.list-in p {
+  font-size: 20px;
+  padding: 30px 0 0 0;
+  font-family: "Press Start 2P", cursive;
+  color: white;
+  text-align: center;
+}
+.img {
+  display: flex;
+  top: 0;
+  position: absolute;
+  min-width: 50vh;
+}
+
+.img span {
+  font-size: 40px;
+  padding: 20px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.input-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.3s ease;
+}
+
+.input {
+  /* background-color: #bb0909; */
+  padding: 30px 50px;
+  border-radius: 15px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+
+  font-family: "Prompt", sans-serif;
+  position: relative;
+  overflow: hidden;
+  /* border: #1864ab 2px solid; */
+  margin: 0 auto;
+}
+
+.input img {
+  height: 85%;
+  width: 85%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#timer {
+  opacity: 0;
+  background-color: white;
+  top: 15px;
+  left: 73%;
+  position: absolute;
+  height: 40px;
+  width: 156px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: centers;
+  border-radius: 5px;
+  border: 2px solid rgba(73, 3, 3, 0.9);
+}
+
+#timer div span {
+  margin: 0 auto;
+  font-family: "Orbitron", sans-serif;
+  font-size: 15px;
+
+  /* width: 50%; */
+}
+#timer span {
+  font-size: 20px;
+  margin-left: 2px;
+}
+
+.high-score {
+  opacity: 0;
+  width: 16rem;
+  height: 7rem;
+  border: 1px solid black;
+  margin-left: 5rem;
+  top: 50%;
+  left: 120%;
+  border-radius: 20px;
+  position: absolute;
+  background-color: rgba(146, 4, 4, 0.555);
+  box-shadow: 0 3px 10px rgba(73, 3, 3, 0.9);
+  border: 3px solid rgba(223, 220, 220, 0.8);
+}
+.high-score p {
+  /* width: auto;
+  height: auto; */
+  /* margin: 0 auto; */
+  padding: 3rem 2.7rem;
+  /* position: relative; */
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 15px;
+}
+
+.high-score span {
+  top: -9px;
+  left: 95%;
+  position: absolute;
+  color: rgba(223, 220, 220, 0.8);
+}
